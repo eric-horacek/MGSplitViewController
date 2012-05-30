@@ -557,7 +557,7 @@
 		[_hiddenPopoverController release];
 		_hiddenPopoverController = nil;
 		[self.masterViewController viewWillDisappear:NO];
-		_hiddenPopoverController = [[UIPopoverController alloc] initWithContentViewController:self.masterViewController];
+//		_hiddenPopoverController = [[UIPopoverController alloc] initWithContentViewController:self.masterViewController];
 		[self.masterViewController viewDidDisappear:NO];
 		
 		// Create and configure _barButtonItem.
@@ -979,7 +979,7 @@
 	if (_viewControllers && [_viewControllers count] > 1) {
 		NSObject *controller = [_viewControllers objectAtIndex:1];
 		if ([controller isKindOfClass:[UIViewController class]]) {
-			return [[controller retain] autorelease];
+			return (UIViewController *)[[controller retain] autorelease];
 		}
 	}
 	
